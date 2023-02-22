@@ -20,10 +20,6 @@ module GoogleAuthenticatorRails
 
     module Integration
       def self.included(klass)
-        if klass.descendants.map(&:name).include?("ApplicationController")
-          raise RailsAdapter::LoadedTooLateError.new
-        end
-
         method = klass.respond_to?(:prepend_before_action) ? :prepend_before_action : :prepend_before_filter
         klass.send(method, :activate_google_authenticator_rails)
       end

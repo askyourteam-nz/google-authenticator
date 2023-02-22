@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    google-authenticator-rails (3.2.0)
+    google-authenticator-rails (3.2.1)
       actionpack
       activerecord
       rails
