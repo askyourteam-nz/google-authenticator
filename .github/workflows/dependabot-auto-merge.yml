@@ -1,0 +1,13 @@
+name: Dependabot Auto-Merge
+
+on:
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - master
+
+jobs:
+  call-workflow:
+    uses: askyourteam-nz/github-actions/.github/workflows/dependabot-auto-merge.yml@main
+    secrets: inherit

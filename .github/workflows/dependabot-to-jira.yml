@@ -1,0 +1,15 @@
+name: Dependabot to Jira
+
+on:
+  pull_request_target:
+    types:
+      - opened
+    branches:
+      - master
+
+jobs:
+  call-workflow:
+    uses: askyourteam-nz/github-actions/.github/workflows/dependabot-jira-single-team.yml@main
+    secrets: inherit
+    with:
+      JIRA_PROJECT_KEY: ${{ vars.JIRA_PROJECT_KEY_PHOENIX }}
